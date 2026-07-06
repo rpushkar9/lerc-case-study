@@ -41,6 +41,17 @@ flow** (247 pages across 8 chapters with interactive practice quizzes), a graded
 with certificate generation, an **admin console**, and a **department-head portal** for tracking
 officer progress.
 
+## Officer flow
+
+Officers enter with a department-issued **access code** (no accounts), then land on a course home that
+tracks progress across all eight chapters and resumes exactly where they left off.
+
+| Access-code login | Course home — 8 chapters |
+|:---:|:---:|
+| ![Access-code login](docs/screenshots/access-code-login.png) | ![Course home](docs/screenshots/course-home.png) |
+
+*(Course home shows the chapter list and progress only — the lesson content itself is the client's and stays private.)*
+
 ## Why it's interesting: security-first design
 
 Officers don't have individual accounts, agencies share networks, and the exam is a real
@@ -83,12 +94,22 @@ CREATE UNIQUE INDEX ux_used_quiz_tokens ON used_quiz_tokens (token_id);
 
 *(Illustrative patterns — generic engineering, not client content.)*
 
-## Admin console
+## Admin & department views
 
-Multi-department administration — access codes, per-department passwords, department-head
-assignment, and progress oversight (shown with **demo data**):
+Two administrative surfaces: a **super-admin console** managing every department (access codes,
+per-department passwords, department-head assignment) and a **department-head portal** tracking each
+officer's progress and quiz completion.
 
-![Admin console](docs/screenshots/admin-console.png)
+> Department, officer, and student identifiers are **blurred** for privacy — the layout and
+> functionality stay intact. The "Test dept" row is test data, left visible.
+
+**Super-admin console**
+
+![Admin console — department management](docs/screenshots/admin-console.png)
+
+**Department-head portal**
+
+![Department-head portal — per-officer progress](docs/screenshots/department-view.png)
 
 ## Architecture
 
